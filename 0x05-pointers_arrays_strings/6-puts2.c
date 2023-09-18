@@ -15,7 +15,7 @@ while (*y != '\0')
 {
 y++;
 longi++;
-}t
+} t
 = longi - 1;
 for (o = 0 ; o <= t ; o++)
 {
