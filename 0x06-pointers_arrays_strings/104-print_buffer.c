@@ -21,7 +21,8 @@ j = size - o < 10 ? size - o : 10;
 printf("%08x: ", o);
 for (i = 0; i < 10; i++)
 {
-if (i < j) printf("%02x", *(b + o + i));
+if
+(i < j) printf("%02x", *(b + o + i));
 else
 printf(" ");
 if (i % 2)
