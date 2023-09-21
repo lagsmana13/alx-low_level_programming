@@ -8,8 +8,8 @@ int main(void)
 
   a[2] = 1024;
   p = &n;
-*((int*)((char*)p + sizeof(int))) = 98;
-/**
+*((int *)((char *)p + sizeof(int))) = 98;
+/*
    * write your line of code here...
    * Remember:
    * - you are not allowed to use a
