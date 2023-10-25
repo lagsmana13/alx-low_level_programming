@@ -1,21 +1,35 @@
 #include "lists.h"
 
 /**
- * listint_len - returns the number of elements in a linked lists
- * @h: linked list of type listint_t to traverse
+ * add_nodeint_end - adds a node at the end of a linked list
+ * @head: pointer to the first element in the list
+ * @n: data to insert in the new element
  *
- * Return: number of nodes
+ * Return: pointer to the new node, or NULL if it fails
  */
-size_t listint_len(const listint_t *h)
+listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-  size_t k = 0;
+  listint_t *new;
+  listint_t *temp = *head;
 
-  while (h)
+  new = malloc(sizeof(listint_t));
+  if (!new)
+    return (NULL);
+
+  new->n = n;
+  new->next = NULL;
+
+  if (*head == NULL)
     {
-      k++;
-      h = h->next;
+      *head = new;
+      return (new);
     }
 
-  return (k);
+  while (temp->next)
+    temp = temp->next;
+
+  temp->next = new;
+
+  return (new);
 }
 
