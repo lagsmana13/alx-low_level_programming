@@ -1,4 +1,4 @@
-#include "hamdi.h"
+#include "Main.h"
 
 /**
  * _pow - func calculates (base ^ power)
