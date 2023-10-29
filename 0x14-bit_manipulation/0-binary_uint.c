@@ -1,4 +1,4 @@
-#include "hamdi.h"
+#include "main.h"
 
 /**
  * binary_to_uint - function converts a binary number to an unsigned int.
