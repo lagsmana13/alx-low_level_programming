@@ -1,9 +1,10 @@
+
 #include "main.h"
 
 /**
- * set_bit - set bit at index to one
- * @n: pointer to number to change
- * @index: index of bit to set to one
+ * set_bit - sets a bit  given index to 1
+ * @n: pointer to the numer to change
+ * @index: index of the bit set to 1
  *
  * Return: 1 for success, -1 for failure
  */
@@ -14,3 +15,5 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	*n = ((1UL << index) | *n);
 	return (1);
+}
+
