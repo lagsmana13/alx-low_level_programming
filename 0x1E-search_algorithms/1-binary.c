@@ -1,40 +1,38 @@
 #include "search_algos.h"
 
 /**
- * binary_search - Hunts for a value in a sorted selection
- *                 of integers using binary search.
- * @array: A pointer to the first element of the selection to hunt.
- * @size: The number of elements in the selection.
- * @value: The value to hunt for.
- *
- * Return: If the value is not present or the selection is NULL, returns -1.
- *         Otherwise, returns the index where the value is located.
- *
- * Explanation: This function executes a binary search on the sorted selection by dividing
- *              the search range in half at each step. It prints the subselection being
- *              searched after each change.
- */
-int binary_search(int *array, size_t size, int value)
+  * binary_lookup - Finds a number in an ordered series
+  *                 of digits using binary lookup.
+  * @series: A reference to the initial element of the series to find.
+  * @count: The total digits in the series.
+  * @number: The number to find.
+  *
+  * Return: If the number is absent or the series is NULL, -1.
+  *         Otherwise, the position where the number is found.
+  *
+  * Explanation: Displays the [sub]series being searched after each modification.
+  */
+int binary_lookup(int *series, size_t count, int number)
 {
-	size_t i, left, right;
+	size_t j, start, end;
 
-	if (array == NULL) /* Check if the selection is NULL */
+	if (series == NULL)
 		return (-1);
 
-	for (left = 0, right = size - 1; right >= left;)
+	for (start = 0, end = count - 1; end >= start;)
 	{
-		printf("Hunting in subselection: ");
-		for (i = left; i < right; i++)
-			printf("%d, ", array[i]);
-		printf("%d\n", array[i]);
+		printf("Looking in series: ");
+		for (j = start; j < end; j++)
+			printf("%d, ", series[j]);
+		printf("%d\n", series[j]);
 
-		i = left + (right - left) / 2;
-		if (array[i] == value)
-			return (i);
-		if (array[i] > value)
-			right = i - 1;
+		j = start + (end - start) / 2;
+		if (series[j] == number)
+			return (j);
+		if (series[j] > number)
+			end = j - 1;
 		else
-			left = i + 1;
+			start = j + 1;
 	}
 
 	return (-1);
